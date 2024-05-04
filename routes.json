@@ -1,0 +1,4 @@
+{
+  "todos": "/todos",
+  "todos/:id": "/todos/:id"
+}

@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "0c1a",
+      "title": "Write launch article to publish on multiple channels",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo similique cupiditate dolor commodi odio ab id ea, distinctio nam!",
+      "priority": "Low",
+      "complete": false,
+      "timeTaken": 0,
+      "dueDate": "2024-05-06",
+      "createdAt": "2024-05-03T05:01:49.836Z"
+    },
+    {
+      "id": "f31b",
+      "title": "Build UI for onboarding flow",
+      "details": "Make beautiful websites regardless of your design experience. Lorem ipsum dolor sit amet.",
+      "priority": "Medium",
+      "complete": false,
+      "timeTaken": 0,
+      "dueDate": "2024-05-03",
+      "createdAt": "2024-05-03T05:01:39.728Z"
+    }
+  ]
+}
