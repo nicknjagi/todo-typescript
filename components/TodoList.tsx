@@ -1,7 +1,7 @@
 import { Divider } from "@nextui-org/divider";
 import AddTodoModal from "./AddTodoModal";
 import Todo from "./Todo";
-import { fetchTodos } from "@/api/actions";
+import { fetchTodos } from "@/app/lib/actions";
 import { useQuery } from "@tanstack/react-query";
 import { Todo as TodoAlias } from "@/types";
 
@@ -15,14 +15,14 @@ const TodoList: React.FC<TodoListProps> = ({onClose}) => {
     queryFn:  fetchTodos
   })
 
-  if(isLoading) return <h1 className="text-xl text-center mt-12">Loading...</h1>
+  if(isLoading) return <h1 className="text-xl text-center my-12">Loading...</h1>
 
   if (isError) {
-    return <div className="text-center mt-12">{error.message}</div>;
+    return <div className="text-center my-12">{error.message}</div>;
   }
 
 	return (
-		<section className="py-8 md:py-10 w-full max-w-xl mx-auto">
+		<section className="todo-list py-8 md:py-10 w-full max-w-xl mx-auto">
 			<div>
         <div className="flex justify-between items-center w-full mx-auto mb-3">
           <h1 className="text-xl">To do List <small className="text-neutral-300 ml-2">{`${data?.filter(el => el.complete === true).length } / ${data?.length}`}</small></h1>
