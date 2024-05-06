@@ -1,4 +1,4 @@
-import { updateTodo } from "@/api/actions";
+import { updateTodo } from '@/app/lib/actions';
 import {Checkbox} from '@nextui-org/checkbox'
 import {Input, Textarea} from '@nextui-org/input'
 import {Select,SelectItem} from '@nextui-org/select'
@@ -21,6 +21,7 @@ const EditTodoForm: React.FC<EditTodoFormProps> = ({ todo:todoToEdit, onClose })
     mutationFn: (updatedTodo: Todo) => updateTodo(updatedTodo),
     onSuccess: () => {
       queryClient.invalidateQueries({queryKey:['todos']})
+      queryClient.invalidateQueries({queryKey:['activeTodo']})
       onClose()
     }
   });
@@ -36,14 +37,19 @@ const EditTodoForm: React.FC<EditTodoFormProps> = ({ todo:todoToEdit, onClose })
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const todoObj = Object.fromEntries(formData);
+    const createdAtTimestamp = new Date(todo.createdAt).getTime();
+    const nowTimestamp = new Date().getTime();
     
     if(!todoToEdit.complete && todoObj.complete === ''){
-      const createdAtTimestamp = new Date(todo.createdAt).getTime();
-      const nowTimestamp = new Date().getTime();
       todo['timeTaken'] = Math.floor((nowTimestamp - createdAtTimestamp) / 1000 / 60)
-    }else{
+    }
+    else if(todoToEdit.complete && todoObj.complete === ''){
+      todo['timeTaken'] = Math.floor((nowTimestamp - createdAtTimestamp) / 1000 / 60)      
+    }
+    else{
       todo['timeTaken']= 0
     }
+
     if(Object.values(todoObj).includes('')){
       // console.log();
     }
@@ -53,7 +59,6 @@ const EditTodoForm: React.FC<EditTodoFormProps> = ({ todo:todoToEdit, onClose })
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <Input
-        autoFocus
         size="sm"
         type="text"
         label="Title"
