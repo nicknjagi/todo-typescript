@@ -7,17 +7,19 @@
       "priority": "Low",
       "complete": false,
       "timeTaken": 0,
-      "dueDate": "2024-05-06",
+      "dueDate": "2024-05-09",
+      "isActive": true,
       "createdAt": "2024-05-03T05:01:49.836Z"
     },
     {
       "id": "f31b",
       "title": "Build UI for onboarding flow",
       "details": "Make beautiful websites regardless of your design experience. Lorem ipsum dolor sit amet.",
-      "priority": "Medium",
+      "priority": "High",
       "complete": false,
       "timeTaken": 0,
-      "dueDate": "2024-05-03",
+      "dueDate": "2024-05-17",
+      "isActive": false,
       "createdAt": "2024-05-03T05:01:39.728Z"
     }
   ]
