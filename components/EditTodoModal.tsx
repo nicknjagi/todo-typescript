@@ -2,17 +2,17 @@ import {  Modal,   ModalContent,   ModalHeader,   ModalBody, useDisclosure} from
 import {Button} from "@nextui-org/button";
 import EditTodoForm from "./EditTodoForm";
 import { Todo } from "@/types";
-import { EditIcon } from "./icons";
+import { Pencil } from "lucide-react";
 
 const EditTodoModal: React.FC<{ todo: Todo }>  = ({todo}) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <Button isIconOnly className="h-7" onPress={onOpen} size="sm" color="primary" variant="flat">
-        <EditIcon />
+      <Button className="h-7" isIconOnly onPress={onOpen} size="sm" color="primary" variant="flat">
+        <Pencil size={18}/>
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
         <ModalContent>
           {(onClose) => (
             <>
