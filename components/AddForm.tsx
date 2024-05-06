@@ -1,4 +1,4 @@
-import { createTodo } from "@/api/actions";
+import { createTodo } from '@/app/lib/actions';
 import {Checkbox} from '@nextui-org/checkbox'
 import {Input, Textarea} from '@nextui-org/input'
 import {Select,SelectItem} from '@nextui-org/select'
@@ -20,6 +20,7 @@ const AddForm: React.FC<AddFormProps> = ({ onClose}) => {
     complete: false,
     timeTaken:0,
     dueDate: "",
+    isActive:false,
     createdAt: new Date()
   });
 
