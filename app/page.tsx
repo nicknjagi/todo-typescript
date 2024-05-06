@@ -1,14 +1,9 @@
 'use client'
-import { fetchTodos } from "@/api/actions";
-import AddTodoModal from "@/components/AddTodoModal";
-import Todo from "@/components/Todo";
-import { Todo as TodoAlias } from "@/types";
-import { Divider } from "@nextui-org/divider";
-import { useQuery } from "@tanstack/react-query";
-import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter, useDisclosure} from "@nextui-org/modal";
+import {  Modal,   ModalContent, ModalBody,  useDisclosure} from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
 import TodoList from "@/components/TodoList";
 import { useState } from "react";
+import ActiveTask from "@/components/ActiveTask"
 
 export default function Home() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -19,7 +14,7 @@ export default function Home() {
 			<Button size="sm" onPress={onOpen} color="primary">
         Todos
       </Button>
-      <Modal className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal id="" className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
         <ModalContent>
           {(onClose) => (
             <>
@@ -30,6 +25,8 @@ export default function Home() {
           )}
         </ModalContent>
       </Modal>
+
+      <ActiveTask />
 		</section>
 	);
 }
