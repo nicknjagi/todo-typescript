@@ -120,7 +120,7 @@ export default function Todo({ todo }: TodoProps) {
       </CardBody>
 
       <CardFooter className="flex flex-col gap-2 pt-1">
-        <div className="flex justify-between w-full">
+        <div className="flex items-center justify-between w-full">
           {!complete ? (
             <p
               className={clsx("text-sm", {
