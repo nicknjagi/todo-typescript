@@ -11,7 +11,7 @@ export interface NewTodo{
   complete: boolean;
   timeTaken: number;
   dueDate: string;
-  createdAt: string | Date;
+  isActive: boolean;  createdAt: string | Date;
 }
 
 export interface Todo extends NewTodo {
