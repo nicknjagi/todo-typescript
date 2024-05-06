@@ -1,4 +1,5 @@
 import { NewTodo, Todo } from "@/types";
+import { revalidatePath } from 'next/cache';
 
 export async function fetchTodos (): Promise<Todo[]>{
   try {
@@ -49,7 +50,6 @@ export async function updateTodo(todo:Todo){
       throw new Error(`Error updating todo`);
     }
 
-    return response.json();
   } catch (error) {
     console.error('Error updating todo:', error);
     throw error; 
@@ -75,3 +75,11 @@ export async function deleteTodo(id:string){
     throw error; 
   }
 }
+
+
+export async function getActiveTodo(){
+  const data = await fetchTodos()
+  const activeTodo = data.filter(todo => todo.isActive === true)[0]
+  return activeTodo || {}
+}
+
