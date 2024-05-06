@@ -11,7 +11,7 @@ const AddTodoModal = () => {
       <Button size="sm" onPress={onOpen} color="primary">
         + Add Todo
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
         <ModalContent>
           {(onClose) => (
             <>
