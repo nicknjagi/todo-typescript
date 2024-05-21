@@ -1,6 +1,6 @@
 import {  Modal,   ModalContent,   ModalHeader,   ModalBody, useDisclosure} from "@nextui-org/modal";
 import {Button} from "@nextui-org/button";
-import EditTodoForm from "./EditTodoForm";
+import EditTodoForm from "../forms/EditTodoForm";
 import { Todo } from "@/types";
 import { Pencil } from "lucide-react";
 

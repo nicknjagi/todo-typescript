@@ -4,6 +4,7 @@ import { daysRemaining, formatTime } from "@/app/lib/utils";
 import { Divider } from "@nextui-org/divider";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
 import clsx from "clsx";
+import { NewTodo} from "@/types";
 
 const ActiveTask = () => {
   const {data, isLoading, isError, error} = useQuery({
@@ -17,14 +18,14 @@ const ActiveTask = () => {
     return <div className="text-center my-12">{error.message}</div>;
   }
 
-  const {title, details, complete, timeTaken, dueDate, } = data
+  const {title, details, complete, timeTaken, dueDate,priority, isActive } : any= data
 
   return (
     <section className="mt-6 max-w-sm bg-[rgba(0,0,0,0.3)] backdrop-blur-sm p-4 rounded-lg">
         <h3 className="text-lg font-semibold">Active Task</h3>
         <Divider className="my-2" />
 
-        {(data.isActive && !complete) ? <Card  id="card"  className="w-full shadow-none bg-transparent">
+        {(data?.isActive && !complete) ? <Card  id="card"  className="w-full shadow-none bg-transparent">
           <CardHeader className="flex gap-3 justify-between pb-3 px-0">
               <h3 className='text-lg '>{title}</h3>
           </CardHeader>

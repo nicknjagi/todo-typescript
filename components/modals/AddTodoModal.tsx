@@ -1,7 +1,7 @@
 
 import {  Modal,   ModalContent,   ModalHeader,   ModalBody, useDisclosure} from "@nextui-org/modal";
 import {Button} from "@nextui-org/button";
-import AddForm from "./AddForm";
+import AddForm from "../forms/AddForm";
 
 const AddTodoModal = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
