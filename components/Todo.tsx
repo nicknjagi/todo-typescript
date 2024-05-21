@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Button } from "@nextui-org/button";
-import EditTodoModal from "./EditTodoModal";
+import EditTodoModal from "./modals/EditTodoModal";
 import { deleteTodo, getActiveTodo, updateTodo} from "@/app/lib/actions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { daysRemaining, formatDate, formatTime } from "@/app/lib/utils";
