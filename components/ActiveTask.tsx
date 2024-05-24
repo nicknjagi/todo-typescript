@@ -1,3 +1,5 @@
+'use client'
+
 import { useQuery } from "@tanstack/react-query"
 import {getActiveTodo} from '@/app/lib/actions';
 import { daysRemaining, formatTime } from "@/app/lib/utils";
