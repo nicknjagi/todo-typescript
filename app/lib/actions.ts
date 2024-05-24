@@ -1,4 +1,4 @@
-import { NewTodo, Todo } from "@/types";
+import { NewEvent, NewTodo, Todo } from "@/types";
 import { revalidatePath } from 'next/cache';
 
 export async function fetchTodos (): Promise<Todo[]>{
@@ -83,3 +83,24 @@ export async function getActiveTodo(){
   return activeTodo || {}
 }
 
+
+export async function createEvent(event: NewEvent){
+  try {
+    const response = await fetch('http://localhost:8000/events', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(event),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error creating event:}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error creating event:', error);
+    throw new Error(`Error creating event: ${error}`)
+  }
+}
