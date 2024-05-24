@@ -1,7 +1,6 @@
 import { NewEvent, NewTodo, Todo } from "@/types";
 import { revalidatePath } from 'next/cache';
 
-
 export async function fetchTodos (): Promise<Todo[]>{
   try {
     const response =await fetch(`${process.env.NEXT_PUBLIC_URL}/todos`)
