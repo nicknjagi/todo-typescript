@@ -12,7 +12,7 @@ const EditTodoModal: React.FC<{ todo: Todo }>  = ({todo}) => {
       <Button className="h-7" isIconOnly onPress={onOpen} size="sm" color="primary" variant="flat">
         <Pencil size={18}/>
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>

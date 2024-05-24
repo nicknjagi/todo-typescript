@@ -14,7 +14,7 @@ const TodosModal = () => {
       <Button size="sm" onPress={onOpen} color="primary">
         Todos
       </Button>
-      <Modal id="" className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
+      <Modal id="" className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>
