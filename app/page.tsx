@@ -11,7 +11,7 @@ export default async function Home() {
   
 	return (
 		<section className="py-8 md:py-10 max-w-screen-2xl mx-auto">
-      <div>{session?.user ? (
+      <div className="mb-6">{session?.user ? (
             <Link href={"/api/auth/signout?callbackUrl=/"}>Logout</Link>
           ) : (
             <Link href={"/api/auth/signin"}>Login</Link>
