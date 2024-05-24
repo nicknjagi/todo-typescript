@@ -15,11 +15,11 @@ const CalendarModal = () => {
       <Button size="sm" onPress={onOpen} variant="light">
         <Calendar />
       </Button>
-      <Modal id="" className="w-full max-w-none mx-auto h-full max-h-fit sm:m-0 rounded-none"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal id="" className="w-full sm:max-w-none mx-auto h-full sm:max-h-fit sm:m-0 sm:rounded-none"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent >
           {(onClose) => (
             <>
-              <ModalBody className="w-full max-w-7xl mx-auto">
+              <ModalBody className="w-full md:max-w-7xl mx-auto">
                 <CustomCalendar />
               </ModalBody>
             </>
