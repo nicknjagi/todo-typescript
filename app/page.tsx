@@ -1,30 +1,25 @@
-'use client'
-import {  Modal,   ModalContent, ModalBody,  useDisclosure} from "@nextui-org/modal";
-import { Button } from "@nextui-org/button";
-import TodoList from "@/components/TodoList";
-import { useState } from "react";
+// 'use client'
 import ActiveTask from "@/components/ActiveTask"
+import TodosModal from "@/components/modals/TodosModal";
+import Link from "next/link";
+import { auth } from "@/auth";
+import CalendarModal from "@/components/modals/CalendarModal";
 
-export default function Home() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [scrollBehavior, setScrollBehavior] = useState("inside");
 
+export default async function Home() {
+  const session = await auth()
+  
 	return (
-		<section className="py-8 md:py-10 max-w-xl mx-auto">
-			<Button size="sm" onPress={onOpen} color="primary">
-        Todos
-      </Button>
-      <Modal id="" className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom-center">
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalBody>
-                <TodoList onClose={onClose}/>
-              </ModalBody>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+		<section className="py-8 md:py-10 max-w-screen-2xl mx-auto">
+      <div>{session?.user ? (
+            <Link href={"/api/auth/signout?callbackUrl=/"}>Logout</Link>
+          ) : (
+            <Link href={"/api/auth/signin"}>Login</Link>
+          )}</div>
+			<div className="flex gap-3">
+        <TodosModal />
+        <CalendarModal />
+      </div>
 
       <ActiveTask />
 		</section>
