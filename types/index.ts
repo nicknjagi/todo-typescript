@@ -17,3 +17,9 @@ export interface NewTodo{
 export interface Todo extends NewTodo {
   id: string;
 }
+
+export interface NewEvent{
+  title: string;
+  start:string;
+  end?:string;
+}
