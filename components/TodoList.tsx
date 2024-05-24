@@ -1,9 +1,8 @@
 import { Divider } from "@nextui-org/divider";
-import AddTodoModal from "./AddTodoModal";
+import AddTodoModal from "./modals/AddTodoModal";
 import Todo from "./Todo";
 import { fetchTodos } from "@/app/lib/actions";
 import { useQuery } from "@tanstack/react-query";
-import { Todo as TodoAlias } from "@/types";
 
 interface TodoListProps {
   onClose: () => void;
@@ -34,7 +33,7 @@ const TodoList: React.FC<TodoListProps> = ({onClose}) => {
 			<Divider className="my-6" />
       
       <div className="flex flex-col items-center justify-center">
-        {data?.map((todo: TodoAlias, index: number)=> {
+        {data?.map((todo, index: number)=> {
           return <Todo key={`${todo.title} ${index}`} todo={todo}/>
         })}
       </div>
