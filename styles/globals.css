@@ -1,23 +1,22 @@
+@import '@/components/calendar/calendar.module.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 section ::-webkit-scrollbar {
-  width: 12px;
+  @apply w-[12px] h-[10px] 
 }
  
 section ::-webkit-scrollbar-track {
-  background: rgb(235, 236, 237,0.7);
-  border-radius: 2rem;
-  margin-block: 4rem;
+  @apply my-[3rem] 
 }
  
 section ::-webkit-scrollbar-thumb {
-  background:rgb(1,49,50);
-  border-radius: 2rem;
-  border: 2px solid  rgb(235, 236, 237,0.7)
+  @apply bg-light rounded-[1rem] cursor-pointer
 }
 
 #card:hover #activate-btn{
   @apply visible
 } 
+
