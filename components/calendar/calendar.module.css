@@ -1,0 +1,48 @@
+.calender-container{
+  @apply w-full max-w-7xl mx-auto h-fit py-4 max-h-[800px]
+}
+
+.fc-view-harness{
+  @apply overflow-auto border border-[#b68d40] border-opacity-50 rounded-sm h-full min-h-[500px] max-h-[600px]
+}
+
+.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr{
+  @apply mt-4
+}
+
+.fc-button-group > .fc-button-primary{
+  @apply focus:shadow-none bg-[#b68d40] hover:bg-[#b68d40]/70 text-black hover:text-black transition-all
+}
+
+.fc-dayGridMonth-view{
+  @apply w-full min-w-[500px] mx-auto border-0
+}
+
+.fc-theme-standard td, .fc-theme-standard th{
+  @apply border border-[#b68d40] border-opacity-50
+}
+
+.fc-scrollgrid{
+  @apply first:border-x-transparent 
+}
+
+.fc .fc-scrollgrid, .fc .fc-scrollgrid table{
+  @apply border-0 
+}
+
+.fc-scrollgrid thead{
+  @apply border-none border-[#b68d40] border-opacity-50
+}
+
+.fc-scrollgrid tbody tr td {
+  @apply last:border-x-transparent
+}
+
+thead > tr > th.fc-col-header-cell{
+  @apply py-3 pl-1 font-normal text-left
+}
+
+.fc-daygrid-day-top{
+  @apply justify-end pl-1
+}
+
