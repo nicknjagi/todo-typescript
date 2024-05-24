@@ -38,7 +38,7 @@ export async function createTodo(todo: NewTodo){
 export async function updateTodo(todo:Todo){
   const {id} = todo
   try {
-    const response = await fetch(`${URL}/todos/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/todos/${id}`, {
       method: 'PATCH', 
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export async function updateTodo(todo:Todo){
 
 export async function deleteTodo(id:string){
   try {
-    const response = await fetch(`${URL}/todos/${id}`, {   
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/todos/${id}`, {   
       method: 'DELETE',
       headers: {
           'Content-Type':'application/json'
@@ -86,7 +86,7 @@ export async function getActiveTodo(){
 
 export async function createEvent(event: NewEvent){
   try {
-    const response = await fetch('${URL}/events', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/events`, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
