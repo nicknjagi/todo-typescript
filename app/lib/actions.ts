@@ -1,9 +1,10 @@
 import { NewEvent, NewTodo, Todo } from "@/types";
 import { revalidatePath } from 'next/cache';
 
+
 export async function fetchTodos (): Promise<Todo[]>{
   try {
-    const response =await fetch('http://localhost:8000/todos')
+    const response =await fetch(`${process.env.NEXT_PUBLIC_URL}/todos`)
     if (!response.ok) {
       throw new Error('Error fetching todos');
     }
@@ -16,7 +17,7 @@ export async function fetchTodos (): Promise<Todo[]>{
 
 export async function createTodo(todo: NewTodo){
   try {
-    const response = await fetch('http://localhost:8000/todos', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/todos`, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +39,7 @@ export async function createTodo(todo: NewTodo){
 export async function updateTodo(todo:Todo){
   const {id} = todo
   try {
-    const response = await fetch(`http://localhost:8000/todos/${id}`, {
+    const response = await fetch(`${URL}/todos/${id}`, {
       method: 'PATCH', 
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +59,7 @@ export async function updateTodo(todo:Todo){
 
 export async function deleteTodo(id:string){
   try {
-    const response = await fetch(`http://localHost:8000/todos/${id}`, {   
+    const response = await fetch(`${URL}/todos/${id}`, {   
       method: 'DELETE',
       headers: {
           'Content-Type':'application/json'
@@ -86,7 +87,7 @@ export async function getActiveTodo(){
 
 export async function createEvent(event: NewEvent){
   try {
-    const response = await fetch('http://localhost:8000/events', {
+    const response = await fetch('${URL}/events', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
