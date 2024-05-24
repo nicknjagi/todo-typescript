@@ -34,10 +34,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       // console.log("user - ",user);
       return session
-    },
-    async signIn({ profile }) {
-      // console.log('User Profile:', profile);
-      return true;
-    },
+    }
   }
 });
