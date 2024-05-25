@@ -9,10 +9,22 @@ const EditTodoModal: React.FC<{ todo: Todo }>  = ({todo}) => {
 
   return (
     <>
-      <Button className="h-7" isIconOnly onPress={onOpen} size="sm" color="primary" variant="flat">
-        <Pencil size={18}/>
+      <Button
+        className="h-7"
+        isIconOnly
+        onPress={onOpen}
+        size="sm"
+        color="primary"
+        variant="flat"
+      >
+        <Pencil size={18} />
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal
+        isOpen={isOpen}
+        isDismissable={false}
+        onOpenChange={onOpenChange}
+        placement="top-center"
+      >
         <ModalContent>
           {(onClose) => (
             <>
@@ -20,7 +32,7 @@ const EditTodoModal: React.FC<{ todo: Todo }>  = ({todo}) => {
                 Edit todo
               </ModalHeader>
               <ModalBody>
-                <EditTodoForm onClose={onClose} todo={todo}/>
+                <EditTodoForm onClose={onClose} todo={todo} />
               </ModalBody>
             </>
           )}
