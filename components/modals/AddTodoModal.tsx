@@ -8,10 +8,15 @@ const AddTodoModal = () => {
 
   return (
     <>
-      <Button size="sm" onPress={onOpen} color="primary">
+      <Button size="sm" onClick={onOpen} color="primary">
         + Add Todo
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal
+        isOpen={isOpen}
+        isDismissable={false}
+        onOpenChange={onOpenChange}
+        placement="top-center"
+      >
         <ModalContent>
           {(onClose) => (
             <>
@@ -19,7 +24,7 @@ const AddTodoModal = () => {
                 Create todo
               </ModalHeader>
               <ModalBody>
-                <AddForm onClose={onClose}/>
+                <AddForm onClose={onClose} />
               </ModalBody>
             </>
           )}
