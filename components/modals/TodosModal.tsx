@@ -14,18 +14,26 @@ const TodosModal = () => {
       <Button size="sm" onPress={onOpen} color="primary">
         Todos
       </Button>
-      <Modal id="todos" className="w-full max-w-xl"  scrollBehavior={scrollBehavior as "inside"} isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal
+        id="todos"
+        className="w-full max-w-xl"
+        scrollBehavior={scrollBehavior as "inside"}
+        isOpen={isOpen}
+        isDismissable={false}
+        onOpenChange={onOpenChange}
+        placement="top-center"
+      >
         <ModalContent>
           {(onClose) => (
             <>
               <ModalBody>
-                <TodoList onClose={onClose}/>
+                <TodoList onClose={onClose} />
               </ModalBody>
             </>
           )}
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 export default TodosModal
